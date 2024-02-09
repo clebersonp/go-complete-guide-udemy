@@ -7,6 +7,9 @@ import (
 
 func main() {
 
+	// Constant in go with keyword const
+	const inflationRate = 2.5
+
 	// go "null types" (default values)
 	// int = 0
 	// float - 0.0
@@ -22,7 +25,9 @@ func main() {
 	years := 10.0
 
 	var futureValue = investmentAmount * math.Pow(1+expectedReturnRate/100, years)
+	futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
 	fmt.Println(futureValue)
+	fmt.Println(futureRealValue)
 
 	// to run the program with a module: go run .
 
