@@ -13,6 +13,8 @@ import "fmt"
 
 // To run in terminal: go run app.go
 
+// Entry point: to run and build a go application (executable)
+// must exist a file with package 'main' AND a function called 'main' without parameters AND a go 'module' file
 func main() {
 	fmt.Println("Hello World!")
 }
