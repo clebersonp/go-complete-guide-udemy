@@ -52,4 +52,10 @@ func main() {
 	fmt.Printf(`Future Value: %.2f
 Future Real Value: %.2f
 `, futureValue, futureRealValue)
+
+	outputText("Printing some text in a custom function\n")
+}
+
+func outputText(value string) {
+	fmt.Print(value)
 }
