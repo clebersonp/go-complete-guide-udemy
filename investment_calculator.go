@@ -38,9 +38,10 @@ func main() {
 
 	var futureValue = investmentAmount * math.Pow(1+expectedReturnRate/100, years)
 	futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
-	fmt.Println(futureValue)
-	fmt.Println(futureRealValue)
-
+	//fmt.Println(futureValue)
+	//fmt.Println(futureRealValue)
+	// formatting output doc: https://pkg.go.dev/fmt@go1.22.0
+	fmt.Printf("Future Value: %.2f\nFuture Real Value: %.2f\n", futureValue, futureRealValue)
 	// to run the program with a module: go run .
 
 }
