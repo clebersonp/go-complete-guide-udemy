@@ -41,7 +41,12 @@ func main() {
 	//fmt.Println(futureValue)
 	//fmt.Println(futureRealValue)
 	// formatting output doc: https://pkg.go.dev/fmt@go1.22.0
-	fmt.Printf("Future Value: %.2f\nFuture Real Value: %.2f\n", futureValue, futureRealValue)
+	//fmt.Printf("Future Value: %.2f\nFuture Real Value: %.2f\n", futureValue, futureRealValue)
 	// to run the program with a module: go run .
+
+	formattedFV := fmt.Sprintf("Future Value: %.2f\n", futureValue)
+	formattedFRV := fmt.Sprintf("Future Value (adjusted for Inflation): %.2f\n", futureRealValue)
+
+	fmt.Print(formattedFV, formattedFRV)
 
 }
