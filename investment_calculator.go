@@ -5,10 +5,10 @@ import (
 	"math"
 )
 
-func main() {
+// Constant in go with keyword const. Global scope
+const inflationRate = 2.5
 
-	// Constant in go with keyword const
-	const inflationRate = 2.5
+func main() {
 
 	// go "null types" (default values)
 	// int = 0
@@ -36,8 +36,10 @@ func main() {
 	fmt.Print("Years: ")
 	fmt.Scan(&years)
 
-	var futureValue = investmentAmount * math.Pow(1+expectedReturnRate/100, years)
-	futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
+	futureValue, futureRealValue := calculateFutureValues(investmentAmount, expectedReturnRate, years)
+
+	//var futureValue = investmentAmount * math.Pow(1+expectedReturnRate/100, years)
+	//futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
 	//fmt.Println(futureValue)
 	//fmt.Println(futureRealValue)
 	// formatting output doc: https://pkg.go.dev/fmt@go1.22.0
@@ -58,4 +60,11 @@ Future Real Value: %.2f
 
 func outputText(value string) {
 	fmt.Print(value)
+}
+
+// calculate future values with multiple parameters and 2 return values together
+func calculateFutureValues(investmentAmount, expectedReturnRate, years float64) (float64, float64) {
+	fv := investmentAmount * math.Pow(1+expectedReturnRate/100, years)
+	rfv := fv / math.Pow(1+inflationRate/100, years)
+	return fv, rfv
 }
