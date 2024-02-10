@@ -63,8 +63,10 @@ func outputText(value string) {
 }
 
 // calculate future values with multiple parameters and 2 return values together
-func calculateFutureValues(investmentAmount, expectedReturnRate, years float64) (float64, float64) {
-	fv := investmentAmount * math.Pow(1+expectedReturnRate/100, years)
-	rfv := fv / math.Pow(1+inflationRate/100, years)
-	return fv, rfv
+func calculateFutureValues(investmentAmount, expectedReturnRate, years float64) (fv float64, rfv float64) {
+	// just using, we don't need to declare because we are declaring into return types
+	fv = investmentAmount * math.Pow(1+expectedReturnRate/100, years)
+	rfv = fv / math.Pow(1+inflationRate/100, years)
+	// return fv, rfv // with this approach (declaring variables into return type) is optional the return with variables
+	return
 }
