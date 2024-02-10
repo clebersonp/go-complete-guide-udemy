@@ -44,9 +44,12 @@ func main() {
 	//fmt.Printf("Future Value: %.2f\nFuture Real Value: %.2f\n", futureValue, futureRealValue)
 	// to run the program with a module: go run .
 
-	formattedFV := fmt.Sprintf("Future Value: %.2f\n", futureValue)
-	formattedFRV := fmt.Sprintf("Future Value (adjusted for Inflation): %.2f\n", futureRealValue)
-
-	fmt.Print(formattedFV, formattedFRV)
-
+	//formattedFV := fmt.Sprintf("Future Value: %.2f\n", futureValue)
+	//formattedFRV := fmt.Sprintf("Future Value (adjusted for Inflation): %.2f\n", futureRealValue)
+	//
+	//fmt.Print(formattedFV, formattedFRV)
+	// using backtick `some texts here`. The break lines are visual, we don't want to use scape \n to break lines anymore
+	fmt.Printf(`Future Value: %.2f
+Future Real Value: %.2f
+`, futureValue, futureRealValue)
 }
